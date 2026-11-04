@@ -214,11 +214,6 @@ spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.format_sql=true
 ```
 
-Substitua `SUA_SENHA` pela senha configurada no PostgreSQL.
-
-**Importante:** não publique senhas reais no GitHub. Utilize variáveis de ambiente ou uma configuração local protegida para as credenciais do banco.
-
-O Hibernate será responsável por criar e atualizar as tabelas conforme as entidades mapeadas.
 
 ### 5. Executar a aplicação
 
