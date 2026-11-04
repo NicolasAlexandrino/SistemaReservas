@@ -65,52 +65,19 @@ src/
 ├── main/
 │   ├── java/com/TrabalhoBack/demo/
 │   │   ├── config/
-│   │   │   └── OpenApiConfig.java
-│   │   │
 │   │   ├── controller/
-│   │   │   ├── HospedeController.java
-│   │   │   ├── QuartoController.java
-│   │   │   └── ReservaController.java
-│   │   │
 │   │   ├── dto/
-│   │   │   ├── HospedeDTO.java
-│   │   │   ├── HospedeRequestDTO.java
-│   │   │   ├── QuartoDTO.java
-│   │   │   ├── QuartoRequestDTO.java
-│   │   │   ├── ReservaDTO.java
-│   │   │   └── ReservaRequestDTO.java
-│   │   │
 │   │   ├── exception/
-│   │   │   ├── ApiError.java
-│   │   │   ├── BusinessException.java
-│   │   │   ├── GlobalExceptionHandler.java
-│   │   │   ├── InvalidRequestException.java
-│   │   │   └── ResourceNotFoundException.java
-│   │   │
 │   │   ├── model/
-│   │   │   ├── Hospede.java
-│   │   │   ├── Quarto.java
-│   │   │   └── Reserva.java
-│   │   │
 │   │   ├── repository/
-│   │   │   ├── HospedeRepository.java
-│   │   │   ├── QuartoRepository.java
-│   │   │   └── ReservaRepository.java
-│   │   │
 │   │   ├── service/
-│   │   │   ├── HospedeService.java
-│   │   │   ├── QuartoService.java
-│   │   │   └── ReservaService.java
-│   │   │
 │   │   └── DemoApplication.java
-│   │
 │   └── resources/
 │       ├── application.properties
 │       └── static/
 │           ├── index.html
 │           ├── styles.css
 │           └── app.js
-│
 └── test/
     └── java/com/TrabalhoBack/demo/
         ├── DemoApplicationTests.java
@@ -167,8 +134,6 @@ O projeto utiliza PostgreSQL e possui três entidades principais:
 
 ### 1. Pré-requisitos
 
-Antes de executar a aplicação, é necessário possuir:
-
 - Java JDK 25.
 - PostgreSQL.
 - Maven (opcional, pois o projeto possui Maven Wrapper).
@@ -177,7 +142,7 @@ Antes de executar a aplicação, é necessário possuir:
 ### 2. Clonar o repositório
 
 ```bash
-git clone https://github.com/SEU-USUARIO/SEU-REPOSITORIO.git
+git clone https://github.com/NicolasAlexandrino/NOME-DO-REPOSITORIO.git
 ```
 
 Entre na pasta do projeto:
@@ -196,11 +161,7 @@ CREATE DATABASE "SistemaReserva";
 
 ### 4. Configurar a conexão
 
-Abra o arquivo:
-
-`src/main/resources/application.properties`
-
-Configure os dados de conexão do PostgreSQL:
+Abra o arquivo `src/main/resources/application.properties` e configure:
 
 ```properties
 spring.application.name=demo
@@ -214,16 +175,17 @@ spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.format_sql=true
 ```
 
+Substitua `SUA_SENHA` pela senha configurada no PostgreSQL. Não publique credenciais reais no GitHub.
 
 ### 5. Executar a aplicação
 
-No Windows:
+**Windows:**
 
 ```bash
 mvnw.cmd spring-boot:run
 ```
 
-No Linux ou macOS:
+**Linux ou macOS:**
 
 ```bash
 ./mvnw spring-boot:run
@@ -247,8 +209,6 @@ Por meio do Swagger é possível visualizar os endpoints, consultar parâmetros,
 
 ## 🔗 Endpoints da API
 
-A API possui três recursos principais: hóspedes, quartos e reservas.
-
 ### Hóspedes — `/hospedes`
 
 | Método HTTP | Endpoint | Descrição |
@@ -259,7 +219,7 @@ A API possui três recursos principais: hóspedes, quartos e reservas.
 | PUT | `/hospedes/{id}` | Atualiza um hóspede |
 | DELETE | `/hospedes/{id}` | Exclui um hóspede |
 
-Filtros disponíveis:
+Filtros:
 
 ```text
 GET /hospedes?nome=Nicolas
@@ -276,7 +236,7 @@ GET /hospedes?email=exemplo@gmail.com
 | PUT | `/quartos/{id}` | Atualiza um quarto |
 | DELETE | `/quartos/{id}` | Exclui um quarto |
 
-Filtros disponíveis:
+Filtros:
 
 ```text
 GET /quartos?tipo=Luxo
@@ -301,7 +261,7 @@ GET /quartos?tipo=Luxo&disponivel=true&capacidadeMinima=2
 | PATCH | `/reservas/{id}/cancelamento` | Cancela uma reserva |
 | DELETE | `/reservas/{id}` | Exclui uma reserva |
 
-Filtros disponíveis:
+Filtros:
 
 ```text
 GET /reservas?status=CONFIRMADA
@@ -426,6 +386,12 @@ Acesse:
 
 http://localhost:8080
 
+## 🎥 Vídeo de demonstração
+
+Confira a apresentação do projeto, com a demonstração do funcionamento do sistema, suas principais funcionalidades e operações da API.
+
+▶️ **[Assistir ao vídeo de demonstração no Google Drive](https://drive.google.com/file/d/10HTRmfQ21PAfSfKoXRIpbZypGHVL9tE1/view?usp=sharing)**
+
 ## 🧪 Testes automatizados
 
 O projeto contém testes automatizados utilizando JUnit 5, Mockito e MockMvc.
@@ -447,7 +413,13 @@ Para executar os testes:
 mvnw.cmd test
 ```
 
-## 👨‍💻 Considerações finais
+## 👨‍💻 Desenvolvedor
+
+**Nicolas Alexandrino**
+
+GitHub: [@NicolasAlexandrino](https://github.com/NicolasAlexandrino)
+
+## 📚 Considerações finais
 
 O Hospeda foi desenvolvido com o objetivo de aplicar, na prática, os principais conceitos de desenvolvimento backend utilizando Java e Spring Boot.
 
